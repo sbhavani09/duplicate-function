@@ -1,0 +1,1 @@
+select * from (select(empno,deptno,sal, row_number() over (partition by deptno,empno,sal desc) as rn from emp1)a where a.rn=1)
